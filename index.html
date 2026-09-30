@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supavised - Custom Web Development & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#F7F7F8] font-sans antialiased text-gray-900 overflow-x-hidden min-h-screen flex flex-col items-center selection:bg-[#2563eb] selection:text-white">
+
+    <!-- Navigation -->
+    <div class="w-full flex justify-center pt-6 px-4">
+        <nav class="animate-fade-in delay-0 flex items-center gap-7 rounded-full bg-white p-1.5 pr-2 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-gray-100/80">
+            <div class="flex items-center gap-2.5 pl-3">
+                <div class="flex h-6 w-6 items-center justify-center rounded-md bg-[#2563eb]">
+                    <svg class="h-3.5 w-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </div>
+                <span class="font-semibold text-[15px] text-gray-900 tracking-tight">Supavised</span>
+            </div>
+            <div class="flex items-center gap-6 px-2 text-[14px] font-medium text-gray-500">
+                <a href="#" class="hover:text-gray-900 transition-colors duration-200">Services</a>
+                <a href="#" class="hover:text-gray-900 transition-colors duration-200">Process</a>
+            </div>
+            <a href="#" class="flex items-center gap-1.5 rounded-full bg-[#2563eb] px-4 py-2 text-[14px] font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-[0.97]">
+                Start Project
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-7-7l7 7-7 7"/></svg>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="relative mt-24 flex w-full max-w-[1000px] flex-col items-center px-4 text-center sm:mt-32">
+        
+        <!-- Floating Element Left -->
+        <div class="animate-scale-in delay-400 absolute left-0 top-12 hidden lg:block xl:-left-8">
+            <div class="relative">
+                <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/948ec9fe-ce83-458d-bd78-ff896bd9f9dd/hero-3-img-0-1790805028021.png" alt="Supavised Digital Strategy Visualization" class="h-[140px] w-[180px] rounded-[20px] object-cover shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white/40">
+                <div class="absolute -bottom-3 -right-3 rounded-full bg-[#FF8A00] px-4 py-1.5 text-[13px] font-medium text-white shadow-lg">David</div>
+            </div>
+        </div>
+
+        <!-- Floating Element Right -->
+        <div class="animate-scale-in delay-400 absolute right-0 top-20 hidden lg:block xl:-right-8">
+            <div class="relative flex h-[140px] w-[116px] flex-col items-center justify-center rounded-[24px] bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100">
+                <!-- Folded corner simulation -->
+                <div class="absolute top-0 right-0 w-10 h-10 bg-[#F7F7F8] rounded-bl-[20px] border-l border-b border-gray-100"></div>
+                
+                <div class="mb-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 z-10">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[#2563eb]">
+                        <svg class="h-4 w-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                </div>
+                <span class="text-[13px] font-medium text-gray-400 z-10">Webapp</span>
+                <div class="absolute -bottom-3 -right-5 rounded-full bg-[#FF8A00] px-4 py-1.5 text-[13px] font-medium text-white shadow-lg z-20">Client</div>
+            </div>
+        </div>
+
+        <!-- Typography & CTA -->
+        <div class="relative z-10 flex flex-col items-center">
+            <h1 class="animate-fade-in-up delay-100 text-balance text-[56px] font-semibold tracking-tighter text-[#111827] sm:text-[72px] md:text-[80px] leading-tight">
+                Digital systems built<br>for small business
+            </h1>
+            
+            <p class="animate-fade-in-up delay-200 mt-6 text-pretty text-[18px] text-gray-500 sm:text-[20px] max-w-2xl leading-relaxed">
+                Supavised delivers high-performance websites and custom webapps. We transform complex manual workflows into efficient digital systems with full code ownership.
+            </p>
+            
+            <div class="animate-fade-in-up delay-300 mt-10 flex flex-col items-center gap-3">
+                <button class="flex items-center gap-2 rounded-full bg-[#2563eb] px-7 py-3.5 text-[16px] font-medium text-white shadow-[0_8px_20px_-6px_rgba(37,99,235,0.5)] transition-all duration-200 hover:opacity-90 active:scale-[0.97]">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Get a Free Quote
+                </button>
+                <span class="text-[13px] font-medium text-gray-400">Fixed-price implementation</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- UI Mockup Container -->
+    <div class="animate-fade-in-up delay-500 mt-24 w-full max-w-[1100px] px-4 pb-0">
+        <div class="flex h-[400px] w-full flex-col overflow-hidden rounded-t-[32px] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-200/60">
+            
+            <!-- Mockup Header -->
+            <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+                <div class="flex items-center gap-3">
+                    <!-- Palet Dropdown -->
+                    <button class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-[14px] font-medium text-gray-700 transition-colors hover:bg-gray-50">
+                        <div class="flex h-5 w-5 items-center justify-center rounded-md bg-black text-[10px] font-bold text-white">S.</div>
+                        Studio
+                        <svg class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <!-- Untitled Dropdown -->
+                    <button class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-[14px] font-medium text-gray-700 transition-colors hover:bg-gray-50">
+                        <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                        Project Dashboard
+                        <svg class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <button class="flex items-center gap-2 rounded-xl border border-gray-200 px-4 py-2 text-[14px] font-medium text-gray-700 transition-colors hover:bg-gray-50">
+                        <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        Analyze
+                    </button>
+                    <button class="flex items-center gap-2 rounded-xl bg-[#2563eb] px-4 py-2 text-[14px] font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-[0.97]">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                        Launch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mockup Content Area -->
+            <div class="flex flex-1 items-center justify-center bg-[#F9FAFB] p-8">
+                <div class="flex h-[280px] w-full max-w-[480px] flex-col items-center justify-center rounded-[24px] border-2 border-dashed border-gray-200 bg-white">
+                    <div class="mb-6 flex gap-6 text-gray-400">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="Custom application development icons"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
